@@ -9,6 +9,7 @@ const app = createApp({
     data(){
         return{
             newTask: '',
+            filtredTask: '',
             tasks: [
                 { id: 1, done: false, text: 'Fare la spesa'},
                 { id: 2, done: false, text: 'Pulire casa'},
@@ -27,7 +28,14 @@ const app = createApp({
             });
             const nextId = ++highestId;
             return nextId;
-        }
+        },
+        //Funzione per filtrare la ricerca
+        researchTask() {
+            const researched = this.filtredTask.toLowerCase();
+            return this.tasks.filter((task) => {
+              return task.text.toLowerCase().includes(researched);
+            });
+          },
     },
     methods : {
         //Funzione per eliminare una task
@@ -52,12 +60,6 @@ const app = createApp({
         undoneTasks(){
             return this.tasks.filter(task => !task.done)
         },
-        toggleTaskStatus(targetId) {
-        this.tasks.forEach((task)=>{
-            if(task.id === targetId) task.done = !task.done;
-            task.done = !task.done;
-        });
-        }
     }
     }
 );
