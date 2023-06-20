@@ -60,6 +60,25 @@ const app = createApp({
         undoneTasks(){
             return this.tasks.filter(task => !task.done)
         },
+
+        //Funzione per eliminare tutte le task
+        deleteAllTasks(){
+            this.tasks = [];
+        },
+
+
+        //Funzione per completare tutte le task
+        doneAllTasks(){
+            this.tasks.forEach((task)=>{
+                task.done = true;
+            })
+        },
+        //Funzione per non completare tutte le task
+        unDoneAllTasks(){
+            this.tasks.forEach((task)=>{
+                task.done = false;
+            })
+        },
     }
     }
 );

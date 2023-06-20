@@ -22,9 +22,9 @@
                 </div>
                 <!-- Mass control buttons -->
                 <div class="btn-group mb-5" role="group" aria-label="Basic outlined example">
-                    <button type="button" class="btn btn-outline-primary">Segna tutte le task come completate</button>
-                    <button type="button" class="btn btn-outline-primary">Elimina tutte le Task</button>
-                    <button type="button" class="btn btn-outline-primary">Segna tutte le task come non completate</button>
+                    <button type="button" class="btn btn-outline-success" @click="doneAllTasks">Segna tutte le task come completate</button>
+                    <button type="button" class="btn btn-outline-danger" @click="deleteAllTasks">Elimina tutte le Task</button>
+                    <button type="button" class="btn btn-outline-warning"@click="unDoneAllTasks">Segna tutte le task come non completate</button>
                   </div>
                 <!-- Filter Research -->
                 <div class="mb-3">
