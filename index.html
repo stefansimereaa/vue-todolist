@@ -23,10 +23,11 @@
                 <!-- List items -->
                 <div class="container-list">
                     <ul class="list-group mb-4">
-                        <li v-for="(task, i) in tasks"  class="list-group-item d-flex align-items-center justify-content-between">{{task.text}}
-                        <!-- <del v-if="task.done">{{ task.text }}</del>
-                        <div v-else>{{ task.text }}</div> -->
-                        <button type="button" class="btn-close" @click="deleteTask(task.id)"></button></li>
+                        <li v-for="(task, i) in tasks"  class="list-group-item d-flex align-items-center justify-content-between">
+                        <del v-if="task.done">{{ task.text }}</del>
+                        <div v-else>{{ task.text }}</div>
+                        <button type="button" class="btn-close" @click="deleteTask(task.id)"></button>
+                        </li>
                     </ul>
                     <div class="input-group mb-3">
                         <input v-model.trim="newTask" type="text" class="form-control" placeholder="Aggiungi una nuova Task..." aria-describedby="button-addon2" @keyup.enter="addTask">

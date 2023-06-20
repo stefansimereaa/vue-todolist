@@ -52,6 +52,10 @@ const app = createApp({
         undoneTasks(){
             return this.tasks.filter(task => !task.done)
         },
+        toggleTaskStatus(task) {
+        task.done = !task.done;
+        },
+          
 
     }
     }
