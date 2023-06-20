@@ -52,11 +52,12 @@ const app = createApp({
         undoneTasks(){
             return this.tasks.filter(task => !task.done)
         },
-        toggleTaskStatus(task) {
-        task.done = !task.done;
-        },
-          
-
+        toggleTaskStatus(targetId) {
+        this.tasks.forEach((task)=>{
+            if(task.id === targetId) task.done = !task.done;
+            task.done = !task.done;
+        });
+        }
     }
     }
 );

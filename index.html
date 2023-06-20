@@ -24,8 +24,9 @@
                 <div class="container-list">
                     <ul class="list-group mb-4">
                         <li v-for="(task, i) in tasks"  class="list-group-item d-flex align-items-center justify-content-between">
-                        <del v-if="task.done">{{ task.text }}</del>
-                        <div v-else>{{ task.text }}</div>
+                            <label :class="{'text-decoration-line-through': task.done}">
+                                <input v-model="task.done" class="form-check-input mt-0 me-3" type="checkbox">{{ task.text }}
+                            </label>
                         <button type="button" class="btn-close" @click="deleteTask(task.id)"></button>
                         </li>
                     </ul>
